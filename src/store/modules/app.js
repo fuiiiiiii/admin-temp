@@ -1,6 +1,7 @@
 import Cookies from 'js-cookie'
-import axios from '@/utils/request'
-import store from '../index'
+// import axios from '@/utils/request'
+// import store from '../index'
+import { menujson } from '@/assets/menuJson'
 const app = {
   state: {
     sidebar: {
@@ -45,21 +46,22 @@ const app = {
     // =======================获取菜单栏=======================
     Set_Menu({ commit }) {
       return new Promise((resolve, reject) => {
-        axios
-          .get('/fuiii')
-          .then(res => {
-            commit('SET_MENU', res.data.list)
-            if (store.getters.userInfo) {
-              Cookies.set(store.getters.userInfo.username, res.data.list, {
-                expires: 30
-              })
-            }
-            resolve(res)
-          })
-          .catch(err => {
-            reject(err)
-            console.log(err)
-          })
+        commit('SET_MENU', JSON.parse(JSON.stringify(menujson.list)))
+        // axios
+        //   .get('/fuiii')
+        //   .then(res => {
+        //     commit('SET_MENU', res.data.list)
+        //     if (store.getters.userInfo) {
+        //       Cookies.set(store.getters.userInfo.username, res.data.list, {
+        //         expires: 30
+        //       })
+        //     }
+        //     resolve(res)
+        //   })
+        //   .catch(err => {
+        //     reject(err)
+        //     console.log(err)
+        //   })
       })
     }
   }

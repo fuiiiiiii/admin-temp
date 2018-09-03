@@ -34,16 +34,18 @@ export default {
     }
   },
   mounted () {
-    if (this.userInfo) {
-      if (Cookies.get(this.userInfo.username)) {
-        var menuStr = Cookies.get(this.userInfo.username)
-        this.SET_MENU(JSON.parse(menuStr))
-      } else {
-        this.$store.dispatch('Set_Menu')
-      }
-    } else {
-      this.$store.dispatch('Set_Menu')
-    }
+    // 动态权限侧边栏， 第一版本不上
+    // if (this.userInfo) {
+    //   if (Cookies.get(this.userInfo.username)) {
+    //     var menuStr = Cookies.get(this.userInfo.username)
+    //     this.SET_MENU(JSON.parse(menuStr))
+    //   } else {
+    //     this.$store.dispatch('Set_Menu')
+    //   }
+    // } else {
+    //   this.$store.dispatch('Set_Menu')
+    // }
+    this.$store.dispatch('Set_Menu')
   },
   methods: {
     ...mapMutations([

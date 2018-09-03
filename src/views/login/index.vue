@@ -1,5 +1,5 @@
 <template>
-  <div class="login-container">
+  <div class="login-container ">
     <el-form ref="loginForm"
              :model="loginForm"
              :rules="loginRules"
@@ -42,6 +42,7 @@
       </el-form-item>
     </el-form>
   </div>
+
 </template>
 
 <script>
@@ -147,7 +148,7 @@ $light_gray: #eee;
   position: fixed;
   height: 100%;
   width: 100%;
-  background-color: $bg;
+  background-color: black;
   .login-form {
     position: absolute;
     left: 0;
@@ -195,3 +196,4 @@ $light_gray: #eee;
   }
 }
 </style>
+
