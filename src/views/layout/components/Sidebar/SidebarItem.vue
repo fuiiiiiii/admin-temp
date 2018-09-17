@@ -5,7 +5,7 @@
       <el-menu-item :key="item.name"
                     :index="item.name">
         <template slot="title">
-          <i class="el-icon-location" />
+          <i :class="item.iconCls" />
           <span>{{ item.name }}</span>
         </template>
       </el-menu-item>
@@ -15,7 +15,7 @@
       <el-submenu :key="item.name"
                   :index="item.name">
         <template slot="title">
-          <i class="el-icon-location" />
+          <i :class="item.iconCls" />
           <span>{{ item.name }}</span>
         </template>
         <!-- 二级子菜单 -->

@@ -148,7 +148,7 @@ $light_gray: #eee;
   position: fixed;
   height: 100%;
   width: 100%;
-  background-color: black;
+  background-color: $bg;
   .login-form {
     position: absolute;
     left: 0;
